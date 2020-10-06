@@ -30,7 +30,7 @@ echo "Installing dependencies..."
 pip3 install --no-cache-dir -r $INPUT_PIP_PATH
 echo "Creating data model..."
 cd $INPUT_PROJECT_PATH
-python3 manage.py graph_models -a -g-o $INPUT_OUTPUT_PATH
+python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
 if _git_changed;
