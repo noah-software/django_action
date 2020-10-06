@@ -6,12 +6,14 @@ A GitHub action for drawing a Django data model automatically.
 
 ### Parameters
 
-| Parameter      | Required |      Default      | Description                              |
-| -------------- | :------: | :---------------: | ---------------------------------------- |
-| commit_message |   :x:    | Added data schema | Custom git commit message                |
-| output_path    |   :x:    |         .         | Output path for generated files          |
-| pip_path       |   :x:    | requirements.txt  | Requirements path for the Django project |
-| project_path   |   :x:    |        ./         | The path to manage.py                    |
+| Parameter      | Required |       Default       | Description                                                        |
+| -------------- | :------: | :-----------------: | ------------------------------------------------------------------ |
+| commit_message |   :x:    | Updated data schema | Custom git commit message                                          |
+| output_path    |   :x:    |          .          | Output path for generated files (see 'Example Config' for example) |
+| pip_path       |   :x:    |  requirements.txt   | Requirements path for the Django project                           |
+| project_path   |   :x:    |         ./          | The path to manage.py (see 'Example Config' for example)           |
+
+> Note: The output_path has to exist already.
 
 ### Example Config
 

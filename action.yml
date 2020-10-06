@@ -7,7 +7,7 @@ inputs:
   commit_message:
     description: Commit message of the changed data
     required: false
-    default: "Added data schema"
+    default: "Updated data schema"
   pip_path:
     description: Path relative to the repository root, where the requirements.txt is located
     required: false
