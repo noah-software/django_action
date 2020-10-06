@@ -4,9 +4,6 @@ description: Automatically runs some django tasks.
 author: Conrad Großer <conrad@noah.tech>
 
 inputs:
-  commit_options:
-    description: Commit options for the changed data
-    required: false
   commit_message:
     description: Commit message of the changed data
     required: false
