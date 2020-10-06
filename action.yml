@@ -4,10 +4,6 @@ description: Automatically runs some django tasks.
 author: Conrad Großer <conrad@noah.tech>
 
 inputs:
-  output_path:
-    description: Output path for the generated data scheme
-    required: false
-    default: "."
   commit_options:
     description: Commit options for the changed data
     required: false
@@ -23,6 +19,10 @@ inputs:
     description: Path relative to the repository root, where the requirements.txt is located
     required: false
     default: "requirements.txt"
+  output_path:
+    description: Output path for the generated data scheme
+    required: false
+    default: "schema.png"
 
 runs:
   using: "docker"
