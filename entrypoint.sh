@@ -27,10 +27,10 @@ _git_changed() {
 
 # PROGRAM
 echo "Installing dependencies..."
-pip install -r $PIP_PATH
+pip install -r $INPUT_PIP_PATH
 pip install django-extensions pyparsing pydot
 echo "Creating data model..."
-python manage.py graph_models -a -g-o $OUTPUT_PATH
+python manage.py graph_models -a -g-o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
 if _git_changed;
