@@ -11,10 +11,6 @@ inputs:
     description: Commit message of the changed data
     required: false
     default: "Added data schema"
-  file_pattern:
-    description: File pattern used for `git add` command
-    required: false
-    default: "*"
   pip_path:
     description: Path relative to the repository root, where the requirements.txt is located
     required: false

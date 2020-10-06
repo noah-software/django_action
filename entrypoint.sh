@@ -39,7 +39,7 @@ then
     _git_setup
     echo "Commiting and pushing changes..."
     # Add changes to git
-    git add $INPUT_FILE_PATTERN || echo "Problem adding your files with pattern ${INPUT_FILE_PATTERN}"
+    git add *
     # Commit and push changes back
     git commit -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>" ${INPUT_COMMIT_OPTIONS:+"$INPUT_COMMIT_OPTIONS"}
     git push origin
