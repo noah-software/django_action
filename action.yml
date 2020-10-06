@@ -23,6 +23,10 @@ inputs:
     description: Output path for the generated data scheme
     required: false
     default: "schema.png"
+  project_path:
+    description: Path to the folder where manage.py is located
+    required: false
+    default: "./"
 
 runs:
   using: "docker"

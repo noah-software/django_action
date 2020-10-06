@@ -13,6 +13,7 @@ A GitHub action for drawing a Django data model automatically.
 | file_pattern   |   :x:    |        \*         | Custom git add file pattern              |
 | output_path    |   :x:    |         .         | Output path for generated files          |
 | pip_path       |   :x:    | requirements.txt  | Requirements path for the Django project |
+| project_path   |   :x:    |        ./         | The path to manage.py                    |
 
 ### Example Config
 
