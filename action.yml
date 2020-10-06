@@ -7,7 +7,10 @@ inputs:
   output_path:
     description: Output path for the generated data scheme
     required: false
-    default: "./"
+    default: "."
+  commit_options:
+    description: Commit options for the changed data
+    required: false
   commit_message:
     description: Commit message of the changed data
     required: false
