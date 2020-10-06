@@ -1,4 +1,4 @@
-FROM python:alpine3.12
+FROM alpine:3.12
 RUN apk update && apk add --no-cache bash git openssh python3
 
 RUN pip3 install --no-cache-dir -q --upgrade pip
