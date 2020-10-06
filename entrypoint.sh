@@ -37,9 +37,8 @@ if _git_changed;
 then
     # Calling method to configure the git environemnt
     _git_setup
-    echo "Commiting and pushing changes..."
     # Commit and push changes back
-    git commit -a -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>" ${INPUT_COMMIT_OPTIONS:+"$INPUT_COMMIT_OPTIONS"}
+    git commit -a -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>"
     git push origin
     echo "Changes pushed successfully."
 else
