@@ -8,7 +8,6 @@ A GitHub action for drawing a Django data model automatically.
 
 | Parameter      | Required |      Default      | Description                              |
 | -------------- | :------: | :---------------: | ---------------------------------------- |
-| commit_options |   :x:    |         -         | Custom git commit options                |
 | commit_message |   :x:    | Added data schema | Custom git commit message                |
 | output_path    |   :x:    |         .         | Output path for generated files          |
 | pip_path       |   :x:    | requirements.txt  | Requirements path for the Django project |
