@@ -27,7 +27,7 @@ _git_changed() {
 
 # PROGRAM
 echo "Installing dependencies..."
-pip install -r $INPUT_PIP_PATH
+# pip install -r $INPUT_PIP_PATH
 echo "Creating data model..."
 python manage.py graph_models -a -g-o $INPUT_OUTPUT_PATH
 
