@@ -10,7 +10,6 @@ A GitHub action for drawing a Django data model automatically.
 | -------------- | :------: | :---------------: | ---------------------------------------- |
 | commit_options |   :x:    |         -         | Custom git commit options                |
 | commit_message |   :x:    | Added data schema | Custom git commit message                |
-| file_pattern   |   :x:    |        \*         | Custom git add file pattern              |
 | output_path    |   :x:    |         .         | Output path for generated files          |
 | pip_path       |   :x:    | requirements.txt  | Requirements path for the Django project |
 | project_path   |   :x:    |        ./         | The path to manage.py                    |
@@ -43,6 +42,8 @@ jobs:
         with:
           # This part is also where you can pass other options, for example:
           pip_path: testfolder/app/requirements.txt
+          project_path: app/
+          output_path: docs/model.png
 ```
 
 More documentation for writing a workflow can be found [here](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions).
