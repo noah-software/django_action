@@ -25,6 +25,8 @@ _git_changed() {
     [[ -n "$(git status -s)" ]]
 }
 
+python --version
+
 # PROGRAM
 echo "Installing dependencies..."
 pip install --no-cache-dir -r $INPUT_PIP_PATH
