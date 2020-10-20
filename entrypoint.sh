@@ -25,14 +25,12 @@ _git_changed() {
     [[ -n "$(git status -s)" ]]
 }
 
-python --version
-
 # PROGRAM
 echo "Installing dependencies..."
-pip install --no-cache-dir -r $INPUT_PIP_PATH
+pip3 install --no-cache-dir -r $INPUT_PIP_PATH
 echo "Creating data model..."
 cd $INPUT_PROJECT_PATH
-python manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
+python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
 if _git_changed;
