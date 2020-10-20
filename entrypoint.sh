@@ -1,7 +1,7 @@
 #!/bin/sh
 # e is for exiting the script automatically if a command fails, u is for exiting if a variable is not set
 # x would be for showing the commands before they are executed
-set -eu
+set -eux
 
 # FUNCTIONS
 # Function for setting up git env in the docker container (copied from https://github.com/stefanzweifel/git-auto-commit-action/blob/master/entrypoint.sh)
@@ -27,10 +27,10 @@ _git_changed() {
 
 # PROGRAM
 echo "Installing dependencies..."
-pip3 install --no-cache-dir -r $INPUT_PIP_PATH
+pip install --no-cache-dir -r $INPUT_PIP_PATH
 echo "Creating data model..."
 cd $INPUT_PROJECT_PATH
-python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
+python manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
 if _git_changed;
