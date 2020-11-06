@@ -38,7 +38,7 @@ then
     # Calling method to configure the git environemnt
     _git_setup
     # Commit and push changes back
-    git commit -a -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>"
+    git commit -am "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>"
     git push origin
     echo "Changes pushed successfully."
 else
