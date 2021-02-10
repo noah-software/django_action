@@ -27,6 +27,7 @@ _git_changed() {
 
 # PROGRAM
 echo "Installing dependencies..."
+pip3 install -U pip
 pip3 install -r $INPUT_PIP_PATH
 echo "Creating data model..."
 cd $INPUT_PROJECT_PATH
