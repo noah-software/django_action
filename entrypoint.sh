@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # e is for exiting the script automatically if a command fails, u is for exiting if a variable is not set
 # x would be for showing the commands before they are executed
 set -eux
@@ -29,8 +29,7 @@ cd $INPUT_PROJECT_PATH
 python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
-if [[ `$(git status -s)` ]];
-then
+if [[ `git status --porcelain` ]]; then
     # Calling method to configure the git environemnt
     _git_setup
     # Commit and push changes back
