@@ -8,11 +8,11 @@ set -eux
 _git_setup ( ) {
     cat <<- EOF > $HOME/.netrc
       machine github.com
-      login $GITHUB_ACTOR
-      password $GITHUB_TOKEN
+      login "$GITHUB_ACTOR"
+      password "$GITHUB_TOKEN"
       machine api.github.com
-      login $GITHUB_ACTOR
-      password $GITHUB_TOKEN
+      login "$GITHUB_ACTOR"
+      password "$GITHUB_TOKEN"
 EOF
     chmod 600 $HOME/.netrc
 
@@ -22,11 +22,11 @@ EOF
 
 echo "Installing dependencies..."
 pip3 install -U pip wheel pygraphviz
-pip3 install -r $INPUT_PIP_PATH
+pip3 install -r "$INPUT_PIP_PATH"
 
 echo "Creating data model..."
-cd $INPUT_PROJECT_PATH
-python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
+cd "$INPUT_PROJECT_PATH"
+python3 manage.py graph_models -a -g -o "$INPUT_OUTPUT_PATH"
 
 # To keep runtime good, just continue if something was changed
 if [[ `git status --porcelain` ]]; then
