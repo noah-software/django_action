@@ -26,7 +26,7 @@ on:
       - master
 
 jobs:
-  prettier:
+  graph-models:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Generate Data Schema
-        uses: noah-software/django_action@v1.0
+        uses: noah-software/django_action@v1.1
         with:
           # This part is also where you can pass other options, for example:
           pip_path: testfolder/app/requirements.txt
