@@ -20,11 +20,6 @@ EOF
     git config --global user.name "GitHub Action"
 }
 
-# Checks if any files are changed
-_git_changed() {
-    [[ -n "$(git status -s)" ]]
-}
-
 echo "Installing dependencies..."
 pip3 install -U pip wheel pygraphviz
 pip3 install -r $INPUT_PIP_PATH
@@ -34,7 +29,7 @@ cd $INPUT_PROJECT_PATH
 python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
 
 # To keep runtime good, just continue if something was changed
-if _git_changed;
+if [[ `$(git status -s)` ]];
 then
     # Calling method to configure the git environemnt
     _git_setup
