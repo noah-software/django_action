@@ -27,6 +27,7 @@ _git_changed() {
 
 echo "Installing dependencies..."
 pip3 install -U pip wheel pyparsing pydot
+pip3 install Django django-extensions
 pip3 install -r $INPUT_PIP_PATH
 
 echo "Creating data model..."
