@@ -1,7 +1,7 @@
 #!/bin/sh
 # e is for exiting the script automatically if a command fails, u is for exiting if a variable is not set
 # x would be for showing the commands before they are executed
-set -eux
+set -eu
 
 # FUNCTIONS
 # Function for setting up git env in the docker container (copied from https://github.com/stefanzweifel/git-auto-commit-action/blob/master/entrypoint.sh)
@@ -26,8 +26,7 @@ _git_changed() {
 }
 
 echo "Installing dependencies..."
-pip3 install -U pip wheel pyparsing graphviz pydot
-pip3 install Django django-extensions
+pip3 install -U pip wheel pygraphviz
 pip3 install -r $INPUT_PIP_PATH
 
 echo "Creating data model..."
