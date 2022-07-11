@@ -25,10 +25,10 @@ _git_changed() {
     [[ -n "$(git status -s)" ]]
 }
 
-# PROGRAM
 echo "Installing dependencies..."
 pip3 install -U pip wheel pyparsing pydot
 pip3 install -r $INPUT_PIP_PATH
+
 echo "Creating data model..."
 cd $INPUT_PROJECT_PATH
 python3 manage.py graph_models -a -g -o $INPUT_OUTPUT_PATH
