@@ -1,7 +1,6 @@
-FROM alpine:3.12
-RUN apk update && apk add --no-cache bash git openssh python3 py3-pip graphviz gcc
+FROM python:3.10-slim-bullseye
 
-RUN python3 -m pip install --upgrade pip setuptools wheel pyparsing pydot django-extensions django
-
+RUN apt-get update -y && apt-get install -y --no-install-recommends bash git graphviz graphviz-dev musl-dev build-essential gcc && apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY entrypoint.sh /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
