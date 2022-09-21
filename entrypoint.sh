@@ -12,13 +12,14 @@ _git_setup ( ) {
 
 echo "Installing dependencies..."
 pip3 install -U pip wheel pygraphviz
-pip3 install -r "$INPUT_PIP_PATH"
+pip3 install --no-cache-dir -r "$INPUT_PIP_PATH"
 
 echo "Creating data model..."
 cd "$INPUT_PROJECT_PATH"
 python3 manage.py graph_models -a -g -o "$INPUT_OUTPUT_PATH"
 
 # To keep runtime good, just continue if something was changed
+
 if [[ `git status --porcelain` ]]; then
     # Calling method to configure the git environemnt
     _git_setup
